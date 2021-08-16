@@ -3,9 +3,42 @@
         <a href="/"><h1>BlogSite</h1></a>
         <p>Thoughters</p>
     </div>
-    <ul>
+    <ul id="list1">
         <li><a href="/">Blogs</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/blogs/create">New Blog</a></li>
     </ul>
 </nav>
+<script>
+    let x = document.cookie;
+    if(x){
+        let list = document.querySelector('ul'),
+        lastItem = document.querySelector('li:last-child');
+        list.removeChild(lastItem);
+        let list = document.querySelector('ul'),
+        lastItem = document.querySelector('li:last-child');
+        list.removeChild(lastItem);
+        var a = document.createElement("a");
+        var ulist = document.getElementById("list1");
+        var newItem = document.createElement("li");
+        a.textContent = "Logout";
+        a.setAttribute('href', "/logout");
+        newItem.appendChild(a);
+        ulist.appendChild(newItem);
+    } else {
+        var a = document.createElement("a");
+        var ulist = document.getElementById("list1");
+        var newItem = document.createElement("li");
+        a.textContent = "Login";
+        a.setAttribute('href', "/login");
+        newItem.appendChild(a);
+        ulist.appendChild(newItem);
+        var a = document.createElement("a");
+        var ulist = document.getElementById("list1");
+        var newItem = document.createElement("li");
+        a.textContent = "Signup";
+        a.setAttribute('href', "/signup");
+        newItem.appendChild(a);
+        ulist.appendChild(newItem);
+    }
+</script>
